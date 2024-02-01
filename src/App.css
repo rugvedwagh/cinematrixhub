@@ -1,0 +1,136 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  text-align: center;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin: 0px 20px;
+  gap: 20px;
+  justify-content: center;
+}
+
+.movie-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.movie-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.selected-movie-info {
+  padding: 20px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+}
+
+.movie-details {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.movie-details img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.movie-info {
+  flex-grow: 1;
+  max-width: 600px;
+}
+
+.movie-info p {
+  margin: 8px 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .selected-movie-info{
+    display: flex;
+    flex-direction: column;
+  }
+  .movie-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-info {
+    max-width: none;
+  }
+}
+
+.textinfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 50px;
+}
+
+.goback{
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
