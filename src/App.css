@@ -73,7 +73,7 @@ body {
   background-color: var(--bodyvar);
   max-height: 450px;
   overflow-y: hidden;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 10px;
   text-align: center;
   border: 2px solid var(--pinkvar);
@@ -121,6 +121,7 @@ body {
   padding: 10px;
   border-radius: 8px;
   box-shadow: 1px 5px 45px var(--bodyvar);
+  min-height: 600px;
 }
 
 .selected-movie-info img {
@@ -163,15 +164,6 @@ body {
     padding: 10px 0;
   }
 
-  .movie-details {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .movie-info {
-    max-width: none;
-  }
-
   .textinfo {
     display: flex;
     flex-direction: column;
@@ -196,6 +188,7 @@ body {
   border: none;
   color: white;
   cursor: pointer;
+  margin: .65rem;
 }
 
 .footer {
@@ -210,12 +203,12 @@ body {
   width: 100%;
   margin-top: 600px;
   box-sizing: border-box;
+  font-size: 1.5rem;
 }
 
 #footername{
   text-transform: uppercase;
   text-shadow: -3px 1px var(--pinkvar);
-  margin-bottom: 1rem;
   font-size: 2rem;
   /* color : var(--bodyvar); */
   color: var(--navvar);
@@ -247,5 +240,10 @@ body {
 }
 
 .textinfo p{
+  margin: .65rem;
   font-size: 1.25rem;
+}
+
+.textinfo h1{
+  margin: .65rem;
 }

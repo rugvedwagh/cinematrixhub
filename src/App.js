@@ -19,6 +19,7 @@ function App() {
       setLoading(true);
       const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=95fb18a5`);
       const data = await response.json();
+      console.log(data)
       setMovies(data.Search || []);
     } catch (error) {
       console.error('Error fetching movies:', error);
@@ -79,11 +80,12 @@ function App() {
           <div className='textinfo'>
             <h1>{selectedMovie.Title}</h1>
             <p>Year: &nbsp;{selectedMovie.Year}</p>
-            <p>Runtime: &nbsp;{selectedMovie.Runtime}</p>
+            <p>IMDB: &nbsp;{selectedMovie.imdbRating}⭐</p>
             <p>Rating: &nbsp;{selectedMovie.Rated}</p>
+            <p>Runtime: &nbsp;{selectedMovie.Runtime}</p>
             <p>Genre: &nbsp;{selectedMovie.Genre}</p>
-            <p>Plot: &nbsp;{selectedMovie.Plot}</p>
             <p>Cast: &nbsp;{selectedMovie.Actors}</p>
+            <p>Plot: &nbsp;{selectedMovie.Plot}</p>
             <button className='goback' onClick={handleGoBack}>Go Back</button>
           </div>
         </div>
@@ -103,8 +105,8 @@ function App() {
         </div>
       )}
       <footer className="footer">
-        <p id='footername'>cinematrix</p>
         <p>&copy; 2024 App</p>
+        <p id='footername'>cinematrix</p>
         <p>Made by rugved </p>
         <a href='https://github.com/Rugved76/movieapp' target='blank_' style={{ textDecoration: 'none', color: 'white' }}>Github</a>
       </footer>
