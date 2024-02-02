@@ -4,10 +4,11 @@ import './App.css';
 function App() {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const movie_list = ['jesse', 'gone', 'hell', 'fire', 'train', 'before',
     'pride', 'taxi', 'after', 'godfather',
-    'how', 'sunshine', 'friend', 'game', 'ugly', '']
+    'how', 'sunshine', 'friend', 'game', 'ugly', ''];
 
   const randomNumber = Math.floor(Math.random() * movie_list.length);
 
@@ -15,17 +16,25 @@ function App() {
 
   const fetchMovies = async () => {
     try {
+      setLoading(true);
       const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=95fb18a5`);
       const data = await response.json();
       setMovies(data.Search || []);
     } catch (error) {
       console.error('Error fetching movies:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchMovies();
   }, [searchTerm]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedMovie, loading]);
 
   const handleSearch = () => {
     fetchMovies();
@@ -34,12 +43,19 @@ function App() {
 
   const handleMovieClick = async (movie) => {
     try {
+      setLoading(true);
       const response = await fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=95fb18a5`);
       const data = await response.json();
       setSelectedMovie(data || null);
     } catch (error) {
       console.error('Error fetching movie details:', error);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const handleGoBack = () => {
+    setSelectedMovie(null);
   };
 
   return (
@@ -56,7 +72,8 @@ function App() {
           <button onClick={handleSearch}>Search</button>
         </div>
       </nav>
-      {selectedMovie ? (
+      {loading && <p className='loading'>Loading...</p>}
+      {!loading && selectedMovie ? (
         <div className="selected-movie-info">
           <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
           <div className='textinfo'>
@@ -67,10 +84,10 @@ function App() {
             <p>Genre: {selectedMovie.Genre}</p>
             <p>Plot: {selectedMovie.Plot}</p>
             <p>Cast: {selectedMovie.Actors}</p>
-            <button className='goback' onClick={() => setSelectedMovie(null)}>Go Back</button>
+            <button className='goback' onClick={handleGoBack}>Go Back</button>
           </div>
         </div>
-      ) : (
+      ) : !loading && (
         <div className="movies-grid">
           {movies.map(movie => (
             <div
