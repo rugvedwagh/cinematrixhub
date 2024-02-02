@@ -104,6 +104,10 @@ body {
   border-radius: 8px;
 }
 
+.selected-movie-info img{
+  border-radius: 4px;
+}
+
 .movie-details {
   display: flex;
   align-items: flex-start;
