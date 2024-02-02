@@ -137,6 +137,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 5px 5px;
+    padding: 10px 0;
   }
 
   .movie-details {
@@ -153,7 +154,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: 0px;
   }
 }
 
