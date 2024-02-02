@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import './App.css';
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const movie_list = ['jesse', 'gone', 'hell', 'fire', 'train', 'before',
+    'pride', 'taxi', 'after', 'godfather',
+    'how', 'sunshine', 'friend', 'game', 'ugly', '']
+
+  const randomNumber = Math.floor(Math.random() * movie_list.length);
+
+  const [searchTerm, setSearchTerm] = useState(movie_list[randomNumber]);
 
   const fetchMovies = async () => {
     try {
@@ -81,7 +89,7 @@ function App() {
       <footer className="footer">
         <p>&copy; 2024 Movie App</p>
         <p>Made by rugved </p>
-        <a href='https://github.com/Rugved76/movieapp' target='blank_' style={{textDecoration:'none', color:'white'}}>Github</a>
+        <a href='https://github.com/Rugved76/movieapp' target='blank_' style={{ textDecoration: 'none', color: 'white' }}>Github</a>
       </footer>
     </div>
   );
