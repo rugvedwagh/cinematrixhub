@@ -6,7 +6,7 @@ body {
 }
 
 .app {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .navbar {
@@ -81,7 +81,7 @@ body {
 .selected-movie-info {
   padding: 20px 80px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   /* padding: 20px; */
 }
@@ -107,10 +107,15 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .selected-movie-info{
+  .selected-movie-info {
     display: flex;
     flex-direction: column;
+    padding: 0px;
+    /* justify-content: flex-start; */
+    align-items: center;
+    margin-bottom: 20px;
   }
+
   .movie-details {
     flex-direction: column;
     align-items: center;
@@ -119,17 +124,30 @@ body {
   .movie-info {
     max-width: none;
   }
+
+  .textinfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 0px;
+  }
+
+  .textinfo p {
+    
+  }
 }
 
-.textinfo{
+.textinfo {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 50px;
+  width: 70%;
 }
 
-.goback{
+.goback {
   background-color: transparent;
   border-radius: 10px;
   border: 1px solid grey;

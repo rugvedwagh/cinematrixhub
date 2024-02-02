@@ -11,7 +11,7 @@ function App() {
       const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=95fb18a5`);
       const data = await response.json();
       setMovies(data.Search || []);
-    } catch (error) {
+    } catch (error) { 
       console.error('Error fetching movies:', error);
     }
   };
