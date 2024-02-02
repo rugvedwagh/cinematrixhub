@@ -1,24 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root{
+  --pinkvar: #eb24d0;
+  --navvar: #010409;
+  --bodyvar: #131a26;
+  --loadingvar : white;
+}
 
 body {
-  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #0d1117;
+  background-color: var(--pinkvar);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   overflow-x: hidden;
 }
 
 .navbar {
-  background-color: #010409;
-  color: #742fd2;
+  background-color: var(--navvar);
+  color: var(--pinkvar);
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 4px solid #742fd2;
+  align-content: center;
+  border-bottom: 4px solid var(--pinkvar);
   align-items: center;
   margin-bottom: 20px;
+}
+
+.navbar h1 {
+  text-transform: uppercase;
+  text-shadow: -3px 1px var(--pinkvar);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  /* color : var(--bodyvar); */
+  color: white;
 }
 
 .search-bar {
@@ -34,7 +52,7 @@ body {
 }
 
 .search-bar button {
-  background-color: #742fd2;
+  background-color: var(--pinkvar);
   color: white;
   border: none;
   padding: 8px 15px;
@@ -52,16 +70,17 @@ body {
 
 .movie-card {
   color: white;
-  background-color: #0d1117;
+  background-color: var(--bodyvar);
   max-height: 450px;
   overflow-y: hidden;
   border-radius: 4px;
   padding: 10px;
   text-align: center;
+  border: 2px solid var(--pinkvar);
 }
 
 .movie-card:hover {
-  opacity: 0.8;
+  border: 2px solid white;
 }
 
 .movie-card img {
@@ -93,7 +112,7 @@ body {
 }
 
 .selected-movie-info {
-  background-color: #0d1117;
+  background-color: var(--bodyvar);
   margin: 30px 180px;
   display: flex;
   justify-content: space-around;
@@ -101,9 +120,10 @@ body {
   color: white;
   padding: 10px;
   border-radius: 8px;
+  box-shadow: 1px 5px 45px var(--bodyvar);
 }
 
-.selected-movie-info img{
+.selected-movie-info img {
   border-radius: 4px;
 }
 
@@ -129,7 +149,7 @@ body {
 
 @media only screen and (max-width: 600px) {
 
-  .app{
+  .app {
     overflow: hidden;
   }
 
@@ -165,14 +185,14 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 10px;
+  margin-left: 20px;
   border-radius: 5px;
 }
 
 .goback {
-  background-color: #742fd2;
+  background-color: var(--pinkvar);
   border-radius: 4px;
-  padding: 5px;
+  padding: 10px;
   border: none;
   color: white;
   cursor: pointer;
@@ -183,13 +203,22 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #0d1117;
+  background-color: var(--navvar);
   color: #fff;
   text-align: center;
   padding: 10px;
   width: 100%;
-  margin-top: 800px;
+  margin-top: 600px;
   box-sizing: border-box;
+}
+
+#footername{
+  text-transform: uppercase;
+  text-shadow: -3px 1px var(--pinkvar);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  /* color : var(--bodyvar); */
+  color: var(--navvar);
 }
 
 @media (max-width: 600px) {
@@ -202,7 +231,7 @@ body {
   width: 80%;
   max-width: 500px;
   height: 45vh;
-  color: #742fd2;
+  color: var(--loadingvar);
   margin: 20vh auto;
   display: flex;
   flex-direction: column;
@@ -217,3 +246,6 @@ body {
   }
 }
 
+.textinfo p{
+  font-size: 1.25rem;
+}

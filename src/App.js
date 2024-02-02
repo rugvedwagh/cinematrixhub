@@ -6,13 +6,13 @@ function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const movie_list = ['jesse', 'gone', 'hell', 'fire', 'train', 'before',
+  const movie_names = ['jesse', 'gone', 'hell', 'fire', 'train', 'before',
     'pride', 'taxi', 'after', 'godfather',
-    'how', 'sunshine', 'friend', 'game', 'ugly', ''];
+    'how', 'sunshine', 'friend', 'game', 'ugly', 'harry'];
 
-  const randomNumber = Math.floor(Math.random() * movie_list.length);
+  const randomNumber = Math.floor(Math.random() * movie_names.length);
 
-  const [searchTerm, setSearchTerm] = useState(movie_list[randomNumber]);
+  const [searchTerm, setSearchTerm] = useState(movie_names[randomNumber]);
 
   const fetchMovies = async () => {
     try {
@@ -61,7 +61,7 @@ function App() {
   return (
     <div className="app">
       <nav className="navbar">
-        <h1>Movie App</h1>
+        <h1>cinematrix</h1>
         <div className="search-bar">
           <input
             type="text"
@@ -77,13 +77,13 @@ function App() {
         <div className="selected-movie-info">
           <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
           <div className='textinfo'>
-            <h2>{selectedMovie.Title}</h2>
-            <p>Year: {selectedMovie.Year}</p>
-            <p>Runtime: {selectedMovie.Runtime}</p>
-            <p>Rating: {selectedMovie.Rated}</p>
-            <p>Genre: {selectedMovie.Genre}</p>
-            <p>Plot: {selectedMovie.Plot}</p>
-            <p>Cast: {selectedMovie.Actors}</p>
+            <h1>{selectedMovie.Title}</h1>
+            <p>Year: &nbsp;{selectedMovie.Year}</p>
+            <p>Runtime: &nbsp;{selectedMovie.Runtime}</p>
+            <p>Rating: &nbsp;{selectedMovie.Rated}</p>
+            <p>Genre: &nbsp;{selectedMovie.Genre}</p>
+            <p>Plot: &nbsp;{selectedMovie.Plot}</p>
+            <p>Cast: &nbsp;{selectedMovie.Actors}</p>
             <button className='goback' onClick={handleGoBack}>Go Back</button>
           </div>
         </div>
@@ -103,7 +103,8 @@ function App() {
         </div>
       )}
       <footer className="footer">
-        <p>&copy; 2024 Movie App</p>
+        <p id='footername'>cinematrix</p>
+        <p>&copy; 2024 App</p>
         <p>Made by rugved </p>
         <a href='https://github.com/Rugved76/movieapp' target='blank_' style={{ textDecoration: 'none', color: 'white' }}>Github</a>
       </footer>
