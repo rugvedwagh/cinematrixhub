@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import './App.css';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=95fb18a5`);
       const data = await response.json();
       setMovies(data.Search || []);
-    } catch (error) { 
+    } catch (error) {
       console.error('Error fetching movies:', error);
     }
   };
@@ -74,11 +75,15 @@ function App() {
               <img src={movie.Poster} alt={`${movie.Title} Poster`} />
               <h2>{movie.Title}</h2>
               <p>{movie.Year}</p>
-              {/* Add other movie information as needed */}
             </div>
           ))}
         </div>
       )}
+      <footer className="footer">
+        <p>&copy; 2024 Movie App</p>
+        <p>Made by rugved </p>
+        <a href='https://github.com/Rugved76/movieapp' target='blank_' style={{textDecoration:'none', color:'white'}}>Github</a>
+      </footer>
     </div>
   );
 }
