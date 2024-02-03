@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './index.css';
 import './App.css';
 
 function App() {
@@ -74,7 +75,14 @@ function App() {
           <button onClick={handleSearch}>Search</button>
         </div>
       </nav>
-      {loading && <p className='loading'>Loading...</p>}
+      {loading &&
+        <div class='tetrominos'>
+          <div class='tetromino box1'></div>
+          <div class='tetromino box2'></div>
+          <div class='tetromino box3'></div>
+          <div class='tetromino box4'></div>
+        </div>
+      }
       {!loading && selectedMovie ? (
         <div className="selected-movie-info">
           <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
@@ -84,9 +92,11 @@ function App() {
             <p>IMDB: &nbsp;{selectedMovie.imdbRating}⭐</p>
             <p>Rating: &nbsp;{selectedMovie.Rated}</p>
             <p>Runtime: &nbsp;{selectedMovie.Runtime}</p>
+            <p>Released: &nbsp;{selectedMovie.Released}</p>
             <p>Genre: &nbsp;{selectedMovie.Genre}</p>
-            <p>Cast: &nbsp;{selectedMovie.Actors}</p>
             <p>Plot: &nbsp;{selectedMovie.Plot}</p>
+            <p>Cast: &nbsp;{selectedMovie.Actors}</p>
+            <p>Awards: &nbsp;{selectedMovie.Awards}</p>
             <button className='goback' onClick={handleGoBack}>Go Back</button>
           </div>
         </div>
