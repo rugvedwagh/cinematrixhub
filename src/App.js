@@ -8,7 +8,8 @@ function App() {
 
   const movie_names = ['jesse', 'gone', 'hell', 'fire', 'train', 'before',
     'pride', 'taxi', 'after', 'godfather',
-    'how', 'sunshine', 'friend', 'game', 'ugly', 'harry'];
+    'how', 'sunshine', 'friend', 'game', 'ugly',
+    'harry', 'american'];
 
   const randomNumber = Math.floor(Math.random() * movie_names.length);
 
@@ -105,8 +106,7 @@ function App() {
         </div>
       )}
       <footer className="footer">
-        <p>&copy; 2024 App</p>
-        <p id='footername'>cinematrix</p>
+        <p id='footername'>&copy; 2024 cinematrix</p>
         <p>Made by rugved </p>
         <a href='https://github.com/Rugved76/movieapp' target='blank_' style={{ textDecoration: 'none', color: 'white' }}>Github</a>
       </footer>
