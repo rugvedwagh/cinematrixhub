@@ -190,7 +190,7 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  margin: .65rem;
+  margin: .5rem;
 }
 
 .footer {
@@ -244,12 +244,12 @@ body {
 }
 
 .textinfo p{
-  margin: .65rem;
+  margin: .5rem;
   font-size: 1.25rem;
 }
 
 .textinfo h1{
-  margin: .65rem;
+  margin: .5rem;
 }
 
 input{

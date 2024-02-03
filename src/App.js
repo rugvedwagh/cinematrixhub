@@ -88,14 +88,15 @@ function App() {
           <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
           <div className='textinfo'>
             <h1>{selectedMovie.Title}</h1>
-            <p>Year: &nbsp;{selectedMovie.Year}</p>
             <p>IMDB: &nbsp;{selectedMovie.imdbRating}⭐</p>
+            <p>Year: &nbsp;{selectedMovie.Year}</p>
+            <p>Director: &nbsp;{selectedMovie.Director}</p>
             <p>Rating: &nbsp;{selectedMovie.Rated}</p>
+            <p>Cast: &nbsp;{selectedMovie.Actors}</p>
             <p>Runtime: &nbsp;{selectedMovie.Runtime}</p>
             <p>Released: &nbsp;{selectedMovie.Released}</p>
             <p>Genre: &nbsp;{selectedMovie.Genre}</p>
             <p>Plot: &nbsp;{selectedMovie.Plot}</p>
-            <p>Cast: &nbsp;{selectedMovie.Actors}</p>
             <p>Awards: &nbsp;{selectedMovie.Awards}</p>
             <button className='goback' onClick={handleGoBack}>Go Back</button>
           </div>
