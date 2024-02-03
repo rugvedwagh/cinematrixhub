@@ -33,9 +33,11 @@ body {
 .navbar h1 {
   text-transform: uppercase;
   text-shadow: -3px 1px var(--pinkvar);
+  font-style: italic;
   margin-bottom: 1rem;
   font-size: 2rem;
   color: white;
+  user-select: none;
 }
 
 .search-bar {
