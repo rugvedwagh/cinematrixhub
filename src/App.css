@@ -2,11 +2,11 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-:root{
+:root {
   --pinkvar: #eb24d0;
   --navvar: #010409;
   --bodyvar: #131a26;
-  --loadingvar : white;
+  --loadingvar: white;
 }
 
 body {
@@ -38,6 +38,7 @@ body {
   font-size: 2rem;
   color: white;
   user-select: none;
+  letter-spacing: 2px;
 }
 
 .search-bar {
@@ -124,7 +125,7 @@ body {
   padding: 10px;
   border-radius: 8px;
   box-shadow: 1px 5px 45px var(--bodyvar);
-  max-width: 900px;
+  max-width: 1100px;
 }
 
 .selected-movie-info img {
@@ -209,7 +210,7 @@ body {
   font-size: 1.5rem;
 }
 
-#footername{
+#footername {
   text-transform: uppercase;
   text-shadow: -3px 1px white;
   font-size: 2rem;
@@ -220,7 +221,8 @@ body {
   .footer {
     font-size: 14px;
   }
-  #footername{
+
+  #footername {
     font-size: .75rem;
   }
 }
@@ -244,15 +246,23 @@ body {
   }
 }
 
-.textinfo p{
+.textinfo p {
   margin: .5rem;
   font-size: 1.25rem;
 }
 
-.textinfo h1{
-  margin: .5rem;
+input {
+  border-radius: 50%;
 }
 
-input{
-  border-radius: 50%;
+.first{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.first h1{
+  margin: .5rem;
+  word-spacing: 2px;
 }

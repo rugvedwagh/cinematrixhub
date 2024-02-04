@@ -9,7 +9,7 @@ function App() {
 
   const movie_names = ['jesse', 'gone', 'hell', 'fire', 'train', 'before',
     'pride', 'taxi', 'after', 'godfather',
-    'how', 'sunshine', 'friend', 'game', 'ugly',
+    'how', 'sunshine', 'friends', 'game', 'ugly',
     'harry', 'american'];
 
   const randomNumber = Math.floor(Math.random() * movie_names.length);
@@ -85,9 +85,11 @@ function App() {
       }
       {!loading && selectedMovie ? (
         <div className="selected-movie-info">
-          <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
-          <div className='textinfo'>
+          <div className='first'>
             <h1>{selectedMovie.Title}</h1>
+            <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
+          </div>
+          <div className='textinfo'>
             <p>IMDB: &nbsp;{selectedMovie.imdbRating}⭐</p>
             <p>Year: &nbsp;{selectedMovie.Year}</p>
             <p>Director: &nbsp;{selectedMovie.Director}</p>
@@ -118,7 +120,7 @@ function App() {
       )}
       <footer className="footer">
         <p id='footername'>&copy; 2024 cinematrix</p>
-        <p>Made by rugved </p>
+        <p>Made by raskolnikov </p>
         <a href='https://github.com/Rugved76/movieapp' target='blank_' style={{ textDecoration: 'none', color: 'white' }}>Github</a>
       </footer>
     </div>
