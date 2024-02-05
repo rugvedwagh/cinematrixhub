@@ -251,18 +251,10 @@ body {
   font-size: 1.25rem;
 }
 
+.textinfo h1{
+  margin : .5rem
+}
+
 input {
   border-radius: 50%;
-}
-
-.first{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.first h1{
-  margin: .5rem;
-  word-spacing: 2px;
 }

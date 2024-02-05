@@ -3,17 +3,18 @@ import './index.css';
 import './App.css';
 
 function App() {
+  
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const movie_names = ['jesse', 'gone', 'hell', 'fire', 'train', 'before',
-    'pride', 'taxi', 'after', 'godfather',
+  const movie_names = ['jesse', 'gone', 'hell', 'fire', 'train',
+    'pride', 'taxi', 'after', 'godfather', 'before',
     'how', 'sunshine', 'friends', 'game', 'ugly',
-    'harry', 'american'];
+    'harry', 'american'
+  ];
 
   const randomNumber = Math.floor(Math.random() * movie_names.length);
-
   const [searchTerm, setSearchTerm] = useState(movie_names[randomNumber]);
 
   const fetchMovies = async () => {
@@ -85,11 +86,9 @@ function App() {
       }
       {!loading && selectedMovie ? (
         <div className="selected-movie-info">
-          <div className='first'>
-            <h1>{selectedMovie.Title}</h1>
-            <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
-          </div>
+          <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
           <div className='textinfo'>
+            <h1>{selectedMovie.Title}</h1>
             <p>IMDB: &nbsp;{selectedMovie.imdbRating}⭐</p>
             <p>Year: &nbsp;{selectedMovie.Year}</p>
             <p>Director: &nbsp;{selectedMovie.Director}</p>
