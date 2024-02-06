@@ -3,9 +3,10 @@ import './index.css';
 import './App.css';
 
 function App() {
-  
+
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [isFullScreen, setIsFullScreen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const movie_names = ['jesse', 'gone', 'hell', 'fire', 'train',
@@ -44,6 +45,10 @@ function App() {
     fetchMovies();
     setSelectedMovie(null);
   };
+
+  const handleImageClick = () => {
+    setIsFullScreen(!isFullScreen);
+  }
 
   const handleMovieClick = async (movie) => {
     try {
@@ -86,7 +91,7 @@ function App() {
       }
       {!loading && selectedMovie ? (
         <div className="selected-movie-info">
-          <img src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} />
+          <img className={`imag ${isFullScreen ? 'fullscreen' : ''}`} src={selectedMovie.Poster} alt={`${selectedMovie.Title} Poster`} onClick={handleImageClick} />
           <div className='textinfo'>
             <h1>{selectedMovie.Title}</h1>
             <p>IMDB: &nbsp;{selectedMovie.imdbRating}⭐</p>

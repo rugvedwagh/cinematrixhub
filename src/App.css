@@ -89,30 +89,8 @@ body {
   object-fit: cover;
   width: 80%;
   height: 65%;
-  overflow: hidden;
   border-radius: 8px;
   margin-top: 1rem;
-}
-
-@media screen and (max-width: 600px) {
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .search-bar {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .movies-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .movie-card {
-    max-height: 500px;
-  }
 }
 
 .selected-movie-info {
@@ -150,30 +128,6 @@ body {
 
 .movie-info p {
   margin: 8px 0;
-}
-
-@media only screen and (max-width: 600px) {
-
-  .app {
-    overflow: hidden;
-  }
-
-  .selected-movie-info {
-    display: flex;
-    flex-direction: column;
-    padding: 0px;
-    align-items: center;
-    justify-content: center;
-    margin: 5px 5px;
-    padding: 10px 0;
-  }
-
-  .textinfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
 }
 
 .textinfo {
@@ -217,16 +171,6 @@ body {
   color: var(--navvar);
 }
 
-@media (max-width: 600px) {
-  .footer {
-    font-size: 14px;
-  }
-
-  #footername {
-    font-size: .75rem;
-  }
-}
-
 .loading {
   width: 80%;
   max-width: 500px;
@@ -240,21 +184,89 @@ body {
   font-size: 4vw;
 }
 
+.textinfo p {
+  margin: .5rem;
+  font-size: 1.25rem;
+}
+
+.textinfo h1 {
+  margin: .5rem
+}
+
+input {
+  border-radius: 50%;
+}
+
+.imag.fullscreen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: zoom-out;
+}
+
+@media screen and (max-width: 600px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .movie-card {
+    max-height: 500px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .app {
+    overflow: hidden;
+  }
+
+  .selected-movie-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 5px;
+    padding: 10px 0;
+  }
+
+  .textinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+}
+
 @media screen and (max-width: 600px) {
   .loading {
     font-size: 30px;
   }
 }
 
-.textinfo p {
-  margin: .5rem;
-  font-size: 1.25rem;
-}
+@media (max-width: 600px) {
+  .footer {
+    font-size: 14px;
+  }
 
-.textinfo h1{
-  margin : .5rem
-}
-
-input {
-  border-radius: 50%;
+  #footername {
+    font-size: .75rem;
+  }
 }
