@@ -1,73 +1,45 @@
-.tetrominos {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-112px, -96px);
+/* Global Reset and Base Styles */
+html {
+  scroll-behavior: smooth;
 }
 
-.tetromino {
-  width: 96px;
-  height: 112px;
-  position: absolute;
-  transition: all ease 0.3s;
-  background: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 684"%3E%3Cpath fill="%23010101" d="M305.7 0L0 170.9v342.3L305.7 684 612 513.2V170.9L305.7 0z"/%3E%3Cpath fill="%23fff" d="M305.7 80.1l-233.6 131 233.6 131 234.2-131-234.2-131"/%3E%3C/svg%3E') no-repeat top center;
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0f0f23;
 }
 
-.box1 {
-  animation: tetromino1 1.5s ease-out infinite;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.box2 {
-  animation: tetromino2 1.5s ease-out infinite;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.box3 {
-  animation: tetromino3 1.5s ease-out infinite;
-  z-index: 2;
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
 }
 
-.box4 {
-  animation: tetromino4 1.5s ease-out infinite;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #e94560, #f39c12);
+  border-radius: 4px;
 }
 
-@keyframes tetromino1 {
-  0%, 40% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(48px, -28px);
-  }
-  60%, 100% {
-    transform: translate(96px, 0);
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #f39c12, #e94560);
 }
 
-@keyframes tetromino2 {
-  0%, 20% {
-    transform: translate(96px, 0);
-  }
-  40%, 100% {
-    transform: translate(144px, 28px);
-  }
+/* Selection Styles */
+::selection {
+  background: rgba(233, 69, 96, 0.3);
+  color: #ffffff;
 }
 
-@keyframes tetromino3 {
-  0% {
-    transform: translate(144px, 28px);
-  }
-  20%, 60% {
-    transform: translate(96px, 56px);
-  }
-  90%, 100% {
-    transform: translate(48px, 28px);
-  }
-}
-
-@keyframes tetromino4 {
-  0%, 60% {
-    transform: translate(48px, 28px);
-  }
-  90%, 100% {
-    transform: translate(0, 0);
-  }
+::-moz-selection {
+  background: rgba(233, 69, 96, 0.3);
+  color: #ffffff;
 }
